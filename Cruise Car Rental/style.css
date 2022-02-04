@@ -1,0 +1,760 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+:root {
+    --main-color: #085594;
+    --main-button-color: #474fa0;
+    --second-color: #843a92;
+    --text-color: #444;
+    --gradient: linear-gradient(#085594, #474fa0);
+}
+
+
+/* SCROLL BAR */
+html::-webkit-scrollbar {
+    width: 0.2rem;
+}
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+html::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: 5rem;
+}
+section {
+    padding: 50px 100px;
+}
+
+
+/* MENU */
+.navbar-back {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100px;
+    background-color: var(--main-button-color);
+}
+.navbar-back .navbar-contact {
+    margin-left: 20px;
+}
+.navbar-back .navbar-contact .bx {
+    position :relative;
+    margin-top: 10px;
+    bottom: 0;
+    color: #eeeff1;
+}
+.bxs-phone{
+    top: 1.4px;  
+    width: 20px;
+}
+.bxl-gmail{
+    top: 1.5px; 
+    width: 20px;
+}
+.navbar-back .navbar-contact b {
+    color: #eeeff1;
+}
+.navbar-back .navbar-contact span {
+    color: #eeeff1;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+.navbar-back header {
+    border-radius: 8px;
+    border: 2px solid var(--main-button-color);
+    position: fixed;
+    width: 90%;
+    margin-left: 70px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #eeeff1;
+    padding: 15px 100px;
+}
+.navbar-back .logo img {
+    width: 200px;
+    margin-left: -60px;
+}
+.navbar-back .navbar {
+    display: flex;
+}
+.navbar-back .navbar li {
+    position: relative;
+}
+.click {
+    border-bottom-color: var(--main-button-color);
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+}
+.navbar-back .navbar a {
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+.navbar-back .navbar a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: var(--gradient);
+    position: absolute;
+    bottom: -13px;
+    left: 0;
+    transition: 0.5s;
+}
+.navbar-back .navbar a:hover::after {
+    width: 100%;
+}
+.navbar-back #menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+}
+.navbar-back .header-btn a {
+    padding: 10px 20px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+.navbar-back .header-btn .sign-in {
+    background: var(--main-button-color);
+    color: #fff;
+    border-radius: 0.5rem;
+}
+.navbar-back .header-btn .sign-in:hover {
+    background: var(--second-color);
+}
+.navbar-back .header-btn .sign-up:hover {
+    color: var(--second-color);
+}
+
+
+/* ANASAYFA */
+.home {
+    width: 100%;
+    min-height: 105vh;
+    position: relative;
+    background: url(img/test.png);
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: cover;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr)
+}
+.text h1 {
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+}
+.text span {
+    color: var(--main-color);
+}
+.text p {
+    margin: 00.5rem 0 1rem;
+}
+.app-stores {
+    display: flex;
+}
+.app-stores img {
+    width: 100px;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+.form-container form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    bottom: 4rem;
+    left: 100px;
+    background: #eeeff1;
+
+    padding: 20px;
+    border-radius: 0.5rem;
+}
+
+.input-box span {
+    font-weight: 500;
+}
+.input-box input {
+    padding: 7px;
+    outline: none;
+    border: none;
+    background: #fff;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+.form-container form .btn {
+    flex: 1 1 7rem;
+    padding: 10px 34px;
+    border: none;
+    border-radius: 0.5rem;
+    background: var(--main-button-color);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 100px;
+}
+.form-container form .btn:hover {
+    background: var(--second-color);
+}
+
+/* GIRIS YAP - KAYIT OL */
+.modal-sign-in,
+.modal-sign-up,
+.car_detail {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.panel {
+
+    border: 2px solid var(--main-button-color);
+    width: 500px;
+    height: auto;
+    margin: auto;
+    margin-top: 140px;
+    background-color: #eeeff1;
+    border-radius: 10px;
+    padding: 25px;
+}
+.modal-sign-in .panel form{
+    margin-top: 30px;
+}
+.modal-sign-in .panel form button{
+    margin-top: 50px;
+}
+.panel form p{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.panel form p a:hover{
+    color: var(--main-button-color);
+}
+.panel h1 {
+    text-align: center;
+    margin-left: 30px;
+    color: var(--main-button-color);
+}
+.panel input {
+    width: 50%;
+    height: 30px;
+    display: block;
+    margin: auto;
+    border: none;
+    background-color: #eeeff1;
+    border-bottom: 2px solid #4b4949;
+    padding: 0 5px;
+}
+.panel input:focus {
+    outline: 0;
+    width: 60%;
+    transition: 1s;
+    border: 2px solid #4b4949;
+    border-radius: 5px;
+}
+.panel button {
+    margin: auto;
+    width: 120px;
+    height: 40px;
+    display: block;
+    margin-top: 15px;
+    background-color: var(--main-button-color);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 17px;
+}
+.panel button:hover {
+    background-color: rgb(182, 181, 181);
+    color: #3b3a3a;
+    transition: 1s;
+    border: 1px solid #3b3a3a;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* ARABA DETAY */
+.detail {
+    border: 2px solid var(--main-button-color);
+    width: 80%;
+    height: 420px;
+    margin-left: 130px;
+    margin-top: 140px;
+    background-color: #eeeff1;
+    border-radius: 12px;
+}
+.detail-box {
+    margin-top: 20px;
+    padding: 30px;
+    float: left;
+    width: 40%;
+    margin-left: 70px;
+    height: 370px;
+    border-radius: 9px;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+.detail .box {
+    width: 100%;
+    padding: 10px;
+}
+.detail .box .box-img {
+    width: 100%;
+    height: 200px;
+}
+.detail .box .box-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+}
+.detail .box p {
+    padding: 0 10px;
+    border: 1px solid var(--text-color);
+    width: 90px;
+    border-radius: 0.5rem;
+    margin: 1rem 0 1rem;
+}
+.detail .box h3 {
+    font-weight: 500;
+}
+.detail .box h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--main-color);
+    margin: 1.2rem 0 0.5rem;
+}
+.detail .detail-box .box h2 span {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+.detail-container .input-box .btn {
+    display: flex;
+    justify-content: center;
+    background: var(--main-button-color);
+    color: #fff;
+    padding: 10px;
+    border-radius: 0.5rem;
+}
+.detail-container .input-box .btn:hover {
+    background: var(--second-color);
+}
+.detail-container {
+    margin-top: 50px;
+    width: 100%;
+}
+.detail-container .input-box {
+    width: 100%;
+    margin-top: 40px;
+}
+.detail-container .input-box input {
+    float: right;
+    width: 50%;
+}
+.detail .close {
+    margin-right: 30px;
+    margin-top: 20px;
+}
+
+
+/* KIRALA */
+.heading {
+    text-align: center;
+}
+.heading span {
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.heading h1 {
+    font-size: 2rem;
+}
+.ride-container {
+    background-color: #eeeff1;
+    border-radius: 20px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.ride-container table {
+    text-align: center;
+    padding: 30px;
+    width: 100%;
+}
+.ride-container table .bx {
+    font-size: 34px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 0.5rem;
+    color: var(--main-color)
+}
+.ride-container table h2 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 1.4rem 0 0.5rem;
+}
+.ride-container table .bx:hover {
+    background: var(--gradient);
+    color: #fff;
+}
+.ride-container table td {
+    width: 33px;
+}
+
+
+/* ARAC FILOSU */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.services-container .box {
+    padding: 10px;
+    border-radius: 1rem;
+    box-shadow: 1px 4px 41px rgba(0, 0, 0, 0.1);
+}
+.services-container .box .box-img {
+    width: 100%;
+    height: 200px;
+}
+.services-container .box .box-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    object-fit: cover;
+    object-position: center;
+}
+.services-container .box p {
+    padding: 0 10px;
+    border: 1px solid var(--text-color);
+    width: 90px;
+    border-radius: 0.5rem;
+    margin: 1rem 0 1rem;
+}
+.services-container .box h3 {
+    font-weight: 500;
+}
+.services-container .box h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--main-color);
+    margin: 1.2rem 0 0.5rem;
+}
+.services-container .box h2 span {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+.services-container .box .btn {
+    display: flex;
+    justify-content: center;
+    background: var(--main-button-color);
+    color: #fff;
+    padding: 10px;
+    border-radius: 0.5rem;
+}
+.services-container .box .btn:hover {
+    background: var(--second-color);
+}
+
+
+/* HAKKIMIZDA */
+.about-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 2rem;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.about-img {
+    width: 600px;
+    margin-left: 50px;
+}
+.about-text {
+    margin-right: 50px;
+}
+.about-img img {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+.about-text span {
+    font-weight: 500;
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+.about-text p {
+    margin: 0.5rem 0 1.4rem;
+}
+.about-text .btn {
+    padding: 10px 20px;
+    background: var(--main-button-color);
+    color: #fff;
+    border-radius: 0.5rem;
+}
+.about-text .btn:hover {
+    background: var(--second-color);
+}
+
+
+/* INCELEMELER */
+.slideshow-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.rev-img {
+    width: 70px;
+    height: 70px;
+}
+.rev-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: 2px solid var(--main-color);
+    user-select: none;
+}
+.mySlides {
+    display: none;
+    padding: 30px 50px 10px 50px;
+    text-align: center;
+}
+.mySlides .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 1px 4px 41px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+}
+.mySlides .box h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0.5rem 0 0.5rem;
+}
+.mySlides .box p {
+    font-style: italic;
+}
+.mySlides .box .stars .bx {
+    color: var(--main-color)
+}
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -30px;
+    padding: 16px;
+    color: #888;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 4px;
+    user-select: none;
+}
+.next {
+    position: absolute;
+    right: 0;
+    border-radius: 4px;
+}
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+
+/* KAMPANYA MENUSU */
+.newsletter {
+    background: linear-gradient(to top right, var(--main-color), #9928A1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.newsletter h2 {
+    color: #fff;
+    font-size: 1.8rem;
+}
+.newsletter .box {
+    margin-top: 1rem;
+    background: #fff;
+    border-radius: 20px;
+    padding: 4px 8px;
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+}
+.newsletter .box input {
+    border: none;
+    outline: none;
+    margin-left: 10px;
+}
+.newsletter .box .btn {
+    background: var(--main-button-color);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 18px;
+}
+.newsletter .box .btn:hover {
+    background: var(--second-color)
+}
+.hr {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 1000px;
+    height: 1px;
+    background-color: #fff;
+}
+
+
+/* SOSYAL MEDYA */
+.social {
+    margin-bottom: -20px;
+}
+.social a {
+    color: #fff;
+    padding: 20px;
+    font-size: 30px;
+}
+.social a:hover {
+    color: black;
+}
+
+
+/* COPYRIGHT */
+.copyright {
+    padding: 10px;
+}
+
+
+/* YUKARI CIK */
+.top {
+    display: scroll;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    background-color: var(--main-button-color);
+    border-radius: 5px;
+}
+.top .bx {
+    font-size: 40px;
+    color: white;
+}
+.top:hover {
+    background-color: #eeeff1;
+}
+.top .bx:hover {
+    color: var(--main-button-color);
+}
+
+
+/* UYARI MESAJI */
+.alert {
+    z-index: 1;
+    display: none;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+    border-radius: 5px;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.closebtn:hover {
+    color: black;
+}
+
+
+/* RESPONSIVE */
+@media (max-width:991px){
+    header{
+        padding: 18px 40px;
+    }
+    section {
+        padding: 50px 40px;
+    }
+}
+@media (max-width:881px){
+    .home{
+        background-position: left;
+    }
+    .form-container form {
+        bottom : 0.2rem;
+        left : 40px;
+    }
+}
+@media (max-width:768px){
+    header{
+        padding: 10px 20px;
+    }
+    #menu-icon {
+        display: initial;
+    }
+    .sign-up{
+        display: none;
+    }
+}
